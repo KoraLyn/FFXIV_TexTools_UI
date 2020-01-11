@@ -167,7 +167,7 @@ namespace FFXIV_TexTools.ViewModels
                         category.Categories.Add(categoryItem);
                         category.CategoryList.Add(modItem.name);
                     }
-
+                    category.Categories = new ObservableCollection<Category>(category.Categories.OrderBy(i => i.Name));
                     Application.Current.Dispatcher.Invoke(() => Categories.Add(category));
                 }
             });
